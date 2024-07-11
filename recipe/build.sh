@@ -8,11 +8,12 @@ mkdir -p ${PREFIX}/share
 # Add missing --force to codesign call on macOS
 sed -i "s/codesign --entitlements/codesign --force --entitlements/" Makefile
 
-make VERSION=${PKG_VERSION}
+make VERSION=${PKG_VERSION} binaries
 cp -r _output/bin/* ${PREFIX}/bin
 cp -r _output/share/* ${PREFIX}/share
 
 if [[ ${target_platform} == ${build_platform} ]]; then
+    make VERSION=${PKG_VERSION} manpages
     mkdir -p ${PREFIX}/etc/bash_completion.d
     mkdir -p ${PREFIX}/share/zsh/site-functions
     mkdir -p ${PREFIX}/share/fish/vendor_completions.d
