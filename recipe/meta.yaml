@@ -1,5 +1,5 @@
 {% set name = "lima-vm" %}
-{% set version = "0.23.1" %}
+{% set version = "0.23.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/lima-vm/lima/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 90485789d02071106864a3003b62975bc213dcedbcc96e53c07adc4c2a91c38d
+  sha256: fc21295f78d717efc921f8f6d1ec22f64da82bfe685d0d2d505aee76c53da1ff
 
 build:
   number: 0
