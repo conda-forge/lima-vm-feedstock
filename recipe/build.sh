@@ -8,7 +8,7 @@ mkdir -p ${PREFIX}/share
 # Add missing --force to codesign call on macOS
 sed -i "s/codesign --entitlements/codesign --force --entitlements/" Makefile
 
-make VERSION=${PKG_VERSION} binaries
+make VERSION=${PKG_VERSION} CC=${CC} binaries
 cp -r _output/bin/* ${PREFIX}/bin
 cp -r _output/share/* ${PREFIX}/share
 
