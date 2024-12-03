@@ -1,0 +1,44 @@
+context:
+  version: 1.0.1
+
+package:
+  name: lima-vm
+  version: ${{ version }}
+
+source:
+  url: https://github.com/lima-vm/lima/archive/v${{ version }}.tar.gz
+  sha256: 82e9bfcfdf7423baaf4c712a3123237818c26b0f22abb38b73591b28a36b754e
+
+build:
+  number: 0
+  dynamic_linking:
+    binary_relocation: false
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ stdlib('c') }}
+    - ${{ compiler('go-cgo') }}
+    - go-licenses
+    - make
+    - if: unix
+      then: sed
+    - if: win
+      then: posix
+
+tests:
+  - script:
+      - limactl --help
+
+about:
+  license: Apache-2.0
+  license_file:
+    - LICENSE
+    - license-files/
+  summary: Linux virtual machines
+  homepage: https://github.com/lima-vm/lima-vm
+  repository: https://github.com/lima-vm/lima-vm
+
+extra:
+  recipe-maintainers:
+    - danielnachun
