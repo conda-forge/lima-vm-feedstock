@@ -24,7 +24,7 @@ requirements:
     - if: unix
       then: sed
     - if: win
-      then: m2-posix
+      then: posix
 
 tests:
   - script:
