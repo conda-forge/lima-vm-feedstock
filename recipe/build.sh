@@ -5,8 +5,11 @@ set -o xtrace -o nounset -o pipefail -o errexit
 mkdir -p ${PREFIX}/bin
 mkdir -p ${PREFIX}/share
 
-# Add missing --force to codesign call on macOS
-sed -i "s/codesign -f -v/codesign -f/" Makefile
+# Delete incorrect codesign binary from BUILD_PREFIX so host provided one is used instead
+rm -rf ${BUILD_PREFIX}/bin/codesign
+
+# Remove buildmode=pie because it doesn't work here
+export GOFLAGS=${GOFLAGS/-buildmode=pie/}
 
 make VERSION=${PKG_VERSION} CC=${CC} binaries
 cp -r _output/bin/* ${PREFIX}/bin
