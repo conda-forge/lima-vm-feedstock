@@ -16,7 +16,7 @@ cp -r _output/bin/* ${PREFIX}/bin
 cp -r _output/share/* ${PREFIX}/share
 
 if [[ ${target_platform} == ${build_platform} ]]; then
-    make VERSION=${PKG_VERSION} manpages
+    make VERSION=${PKG_VERSION} CC=${CC} manpages
     mkdir -p ${PREFIX}/etc/bash_completion.d
     mkdir -p ${PREFIX}/share/zsh/site-functions
     mkdir -p ${PREFIX}/share/fish/vendor_completions.d
