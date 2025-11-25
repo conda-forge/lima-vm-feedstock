@@ -23,8 +23,8 @@ requirements:
     - make
     - if: unix
       then: sed
-    - if: win
-      then: posix
+    # - if: win
+    #   then: posix
 
 tests:
   - script:
