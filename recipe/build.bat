@@ -1,6 +1,8 @@
 mkdir %LIBRARY_PREFIX%\bin
 mkdir %LIBRARY_PREFIX%\share
 
+rm pkg\cidata\cloud-config.yaml || goto :error
+copy pkg\çidata\cidata.TEMPLATE.d\user-data pkg\cidata\cloud-config.yaml || goto :error
 make VERSION=%PKG_VERSION% || goto :error
 xcopy _output\bin\* %LIBRARY_PREFIX%\bin || goto :error
 xcopy _output\share\* %LIBRARY_PREFIX%\share || goto :error
