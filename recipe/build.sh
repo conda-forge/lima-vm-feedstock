@@ -8,7 +8,6 @@ mkdir -p ${PREFIX}/share
 # Delete incorrect codesign binary from BUILD_PREFIX so host provided one is used instead
 rm -rf ${BUILD_PREFIX}/bin/codesign
 ln -sf /usr/bin/codesign ${BUILD_PREFIX}/bin/codesign
-which codesign
 
 # Remove buildmode=pie because it doesn't work here
 export GOFLAGS=${GOFLAGS/-buildmode=pie/}
