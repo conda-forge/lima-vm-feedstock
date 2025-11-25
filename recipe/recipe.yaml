@@ -25,6 +25,7 @@ requirements:
       then: sed
       else:
         - m2-gawk
+        - m2-make
 
 tests:
   - script:
