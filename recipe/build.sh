@@ -7,6 +7,7 @@ mkdir -p ${PREFIX}/share
 
 # Delete incorrect codesign binary from BUILD_PREFIX so host provided one is used instead
 rm -rf ${BUILD_PREFIX}/bin/codesign
+rm -rf /Users/runner/miniforge3/bin/codesign
 which codesign
 
 # Remove buildmode=pie because it doesn't work here
