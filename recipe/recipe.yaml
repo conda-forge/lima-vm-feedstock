@@ -1,5 +1,5 @@
 context:
-  version: "1.0.7"
+  version: "2.0.1"
 
 package:
   name: lima-vm
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/lima-vm/lima/archive/v${{ version }}.tar.gz
-  sha256: 90f682e96a370c342c3b16deb1858f37ee28ce88e888e1d6b2634ba24228fdbb
+  sha256: a3efa067676ca80e780671eade074a5ff8ea080b04563f3cfd07cfc9ca4cbf76
 
 build:
   number: 0
@@ -23,8 +23,9 @@ requirements:
     - make
     - if: unix
       then: sed
-    - if: win
-      then: posix
+      else:
+        - m2-gawk
+        - m2-make
 
 tests:
   - script:
