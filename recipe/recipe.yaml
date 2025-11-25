@@ -24,9 +24,11 @@ requirements:
     - if: unix
       then: sed
       else:
-        - m2-coreutils
-        - m2-findutils
-        - m2-gawk
+        - m2-base
+        - m2-diffutils
+        - m2-tar
+        - m2-unzip
+        - m2-zip
 
 tests:
   - script:
