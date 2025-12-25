@@ -1,5 +1,5 @@
 context:
-  version: "2.0.2"
+  version: "2.0.3"
 
 package:
   name: lima-vm
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/lima-vm/lima/archive/v${{ version }}.tar.gz
-  sha256: 51e0461c719c67c87310a1df4c55afe83f8379c246cd66c1c38773785f7994c8
+  sha256: 55625e642de492827e6cf7740c095822ef8193458211e286f17a3c11ebf50a93
 
 build:
   number: 0
