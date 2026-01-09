@@ -10,7 +10,7 @@ source:
   sha256: 55625e642de492827e6cf7740c095822ef8193458211e286f17a3c11ebf50a93
 
 build:
-  number: 0
+  number: 1
   dynamic_linking:
     binary_relocation: false
 
@@ -37,8 +37,8 @@ about:
     - LICENSE
     - license-files/
   summary: Linux virtual machines
-  homepage: https://github.com/lima-vm/lima-vm
-  repository: https://github.com/lima-vm/lima-vm
+  homepage: https://lima-vm.io/
+  repository: https://github.com/lima-vm/lima
 
 extra:
   recipe-maintainers:
