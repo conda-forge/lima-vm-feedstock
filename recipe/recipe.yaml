@@ -24,6 +24,7 @@ requirements:
     - if: unix
       then: sed
       else:
+        - m2-filesystem
         - m2-gawk
         - m2-make
 
