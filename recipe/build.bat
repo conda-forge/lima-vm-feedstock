@@ -25,13 +25,9 @@ for /f "delims=" %%L in ('dir /a:l /s /b "%SRC_DIR%" 2^>nul') do (
 )
 if defined DEREF_FOUND goto :deref_symlinks
 
-mkdir %LIBRARY_PREFIX%\bin
-mkdir %LIBRARY_PREFIX%\share
-
 set GOFLAGS=-modcacherw -trimpath
 make VERSION=%PKG_VERSION% binaries || goto :error
-xcopy _output\bin\* %LIBRARY_PREFIX%\bin || goto :error
-xcopy _output\share\* %LIBRARY_PREFIX%\share || goto :error
+xcopy /E /I /Y "_output\*" "%LIBRARY_PREFIX%\" || goto :error
 
 go-licenses save .\cmd\limactl --save_path=license-files --ignore github.com/linuxkit/virtsock || goto :error
 xcopy /s %RECIPE_DIR%\license-files\* %SRC_DIR%\license-files || goto :error
