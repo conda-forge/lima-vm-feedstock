@@ -10,9 +10,7 @@ source:
   sha256: 436ace830cb3e8fa512e0157a220bd8d6f826aef789c3f26d2984f0ea1e3c2ea
 
 build:
-  number: 0
-  dynamic_linking:
-    binary_relocation: false
+  number: 1
 
 requirements:
   build:
@@ -22,13 +20,15 @@ requirements:
     - go-licenses
     - make
     - if: unix
-      then: sed
+      then:
+        - sed
       else:
         - m2-gawk
         - m2-make
 
 tests:
   - script:
+      - limactl --version
       - limactl --help
 
 about:
@@ -37,9 +37,10 @@ about:
     - LICENSE
     - license-files/
   summary: Linux virtual machines
-  homepage: https://github.com/lima-vm/lima-vm
-  repository: https://github.com/lima-vm/lima-vm
+  homepage: https://github.com/lima-vm/lima
+  repository: https://github.com/lima-vm/lima
 
 extra:
   recipe-maintainers:
     - danielnachun
+    - XhstormR

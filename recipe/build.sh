@@ -2,9 +2,6 @@
 
 set -o xtrace -o nounset -o pipefail -o errexit
 
-mkdir -p ${PREFIX}/bin
-mkdir -p ${PREFIX}/share
-
 # Delete incorrect codesign binary from BUILD_PREFIX so host provided one is used instead
 rm -rf ${BUILD_PREFIX}/bin/codesign
 ln -sf /usr/bin/codesign ${BUILD_PREFIX}/bin/codesign
@@ -13,8 +10,7 @@ ln -sf /usr/bin/codesign ${BUILD_PREFIX}/bin/codesign
 export GOFLAGS=${GOFLAGS/-buildmode=pie/}
 
 make VERSION=${PKG_VERSION} CC=${CC} binaries
-cp -r _output/bin/* ${PREFIX}/bin
-cp -r _output/share/* ${PREFIX}/share
+cp -a _output/. "${PREFIX}/"
 
 if [[ ${target_platform} == ${build_platform} ]]; then
     make VERSION=${PKG_VERSION} CC=${CC} manpages
