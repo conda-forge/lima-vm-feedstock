@@ -3,13 +3,13 @@ About lima-vm-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/lima-vm-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/lima-vm/lima-vm
+Home: https://github.com/lima-vm/lima
 
 Package license: Apache-2.0
 
 Summary: Linux virtual machines
 
-Development: https://github.com/lima-vm/lima-vm
+Development: https://github.com/lima-vm/lima
 
 Current build status
 ====================
@@ -221,5 +221,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@XhstormR](https://github.com/XhstormR/)
 * [@danielnachun](https://github.com/danielnachun/)
 
